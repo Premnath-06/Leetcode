@@ -8,9 +8,11 @@
 
 <br/><br/>
 
+<!--LEETSTATS-BADGES-START-->
 ![Problems Solved](https://img.shields.io/badge/Problems%20Solved-10-FFA116?style=for-the-badge&logo=leetcode&logoColor=black)
 ![Language](https://img.shields.io/badge/Language-Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
 ![Topics](https://img.shields.io/badge/Topics%20Covered-11-7C3AED?style=for-the-badge)
+<!--LEETSTATS-BADGES-END-->
 
 <br/>
 
@@ -65,17 +67,19 @@ A curated collection of my LeetCode solutions, auto-synced using **LeetHub v2**.
 
 <div align="center">
 
+<!--LEETSTATS-TOPICS-START-->
 ![Array](https://img.shields.io/badge/Array-3-4F46E5?style=flat-square)
 ![String](https://img.shields.io/badge/String-4-4F46E5?style=flat-square)
 ![Math](https://img.shields.io/badge/Math-3-4F46E5?style=flat-square)
-![Hash%20Table](https://img.shields.io/badge/Hash%20Table-2-7C3AED?style=flat-square)
-![Binary%20Search](https://img.shields.io/badge/Binary%20Search-2-7C3AED?style=flat-square)
-![Linked%20List](https://img.shields.io/badge/Linked%20List-1-6C63FF?style=flat-square)
+![Hash Table](https://img.shields.io/badge/Hash%20Table-2-7C3AED?style=flat-square)
+![Binary Search](https://img.shields.io/badge/Binary%20Search-2-7C3AED?style=flat-square)
+![Linked List](https://img.shields.io/badge/Linked%20List-1-6C63FF?style=flat-square)
 ![Recursion](https://img.shields.io/badge/Recursion-1-6C63FF?style=flat-square)
-![Sliding%20Window](https://img.shields.io/badge/Sliding%20Window-1-6C63FF?style=flat-square)
-![Two%20Pointers](https://img.shields.io/badge/Two%20Pointers-1-6C63FF?style=flat-square)
-![Dynamic%20Programming](https://img.shields.io/badge/Dynamic%20Programming-1-6C63FF?style=flat-square)
-![Divide%20and%20Conquer](https://img.shields.io/badge/Divide%20%26%20Conquer-1-6C63FF?style=flat-square)
+![Sliding Window](https://img.shields.io/badge/Sliding%20Window-1-6C63FF?style=flat-square)
+![Two Pointers](https://img.shields.io/badge/Two%20Pointers-1-6C63FF?style=flat-square)
+![Dynamic Programming](https://img.shields.io/badge/Dynamic%20Programming-1-6C63FF?style=flat-square)
+![Divide and Conquer](https://img.shields.io/badge/Divide%20%26%20Conquer-1-6C63FF?style=flat-square)
+<!--LEETSTATS-TOPICS-END-->
 
 </div>
 
@@ -116,7 +120,6 @@ A curated collection of my LeetCode solutions, auto-synced using **LeetHub v2**.
 |  |
 | ------- |
 | [0002-add-two-numbers](https://github.com/Premnath-06/Leethub/tree/master/0002-add-two-numbers) |
-| [0010-regular-expression-matching](https://github.com/Premnath-06/Leethub/tree/master/0010-regular-expression-matching) |
 ## String
 |  |
 | ------- |
@@ -124,7 +127,6 @@ A curated collection of my LeetCode solutions, auto-synced using **LeetHub v2**.
 | [0005-longest-palindromic-substring](https://github.com/Premnath-06/Leethub/tree/master/0005-longest-palindromic-substring) |
 | [0006-zigzag-conversion](https://github.com/Premnath-06/Leethub/tree/master/0006-zigzag-conversion) |
 | [0008-string-to-integer-atoi](https://github.com/Premnath-06/Leethub/tree/master/0008-string-to-integer-atoi) |
-| [0010-regular-expression-matching](https://github.com/Premnath-06/Leethub/tree/master/0010-regular-expression-matching) |
 ## Sliding Window
 |  |
 | ------- |
@@ -146,7 +148,6 @@ A curated collection of my LeetCode solutions, auto-synced using **LeetHub v2**.
 |  |
 | ------- |
 | [0005-longest-palindromic-substring](https://github.com/Premnath-06/Leethub/tree/master/0005-longest-palindromic-substring) |
-| [0010-regular-expression-matching](https://github.com/Premnath-06/Leethub/tree/master/0010-regular-expression-matching) |
 <!---LeetCode Topics End-->
 
 <br/>
