@@ -1,0 +1,132 @@
+name: Update LeetCode Stats
+
+on:
+  push:
+    branches: [master, main]
+    paths:
+      - 'README.md'
+
+jobs:
+  update-stats:
+    runs-on: ubuntu-latest
+
+    # Prevents infinite loop — skip if the bot itself made this commit
+    if: github.actor != 'github-actions[bot]'
+
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Parse README and update stats
+        run: |
+          python3 << 'PYEOF'
+          import re, sys
+
+          with open('README.md', 'r', encoding='utf-8') as f:
+              content = f.read()
+
+          # ── 1. Find LeetHub-managed block ──────────────────────────────
+          LC_START = "<!---LeetCode Topics Start-->"
+          LC_END   = "<!---LeetCode Topics End-->"
+
+          idx_s = content.find(LC_START)
+          idx_e = content.find(LC_END)
+
+          if idx_s == -1 or idx_e == -1:
+              print("LeetCode markers not found — nothing to update.")
+              sys.exit(0)
+
+          block = content[idx_s : idx_e + len(LC_END)]
+
+          # ── 2. Count unique problems ────────────────────────────────────
+          # Problem slugs look like: [0001-two-sum](url)
+          slugs = re.findall(r'\[(\d{4}-[a-z0-9-]+)\]\(', block)
+          total = len(set(slugs))
+
+          # ── 3. Count per topic ──────────────────────────────────────────
+          # Topics are ## headings; each problem row matches | [slug](url) |
+          topic_counts = {}
+          current = None
+          for line in block.splitlines():
+              stripped = line.strip()
+              if stripped.startswith('## '):
+                  current = stripped[3:].strip()
+                  topic_counts.setdefault(current, 0)
+              elif current and re.match(r'\|\s*\[', stripped):
+                  topic_counts[current] += 1
+
+          num_topics = len(topic_counts)
+
+          print(f"Unique problems : {total}")
+          print(f"Unique topics   : {num_topics}")
+          for t, c in topic_counts.items():
+              print(f"  {t}: {c}")
+
+          # ── 4. Build new badge lines ────────────────────────────────────
+          header_badges = (
+              f"![Problems Solved](https://img.shields.io/badge/Problems%20Solved-{total}-FFA116"
+              f"?style=for-the-badge&logo=leetcode&logoColor=black)\n"
+              f"![Language](https://img.shields.io/badge/Language-Python-3776AB"
+              f"?style=for-the-badge&logo=python&logoColor=white)\n"
+              f"![Topics](https://img.shields.io/badge/Topics%20Covered-{num_topics}-7C3AED"
+              f"?style=for-the-badge)"
+          )
+
+          # Colour cycling: first 3 topics get darkest purple, next 3 medium, rest lighter
+          COLORS = ['4F46E5', '4F46E5', '4F46E5',
+                    '7C3AED', '7C3AED', '7C3AED',
+                    '6C63FF', '6C63FF', '6C63FF',
+                    'A78BFA', 'A78BFA', 'A78BFA']
+
+          topic_badge_lines = []
+          for i, (topic, count) in enumerate(topic_counts.items()):
+              color = COLORS[min(i, len(COLORS) - 1)]
+              slug  = topic.replace(' ', '%20').replace('&', '%26')
+              topic_badge_lines.append(
+                  f"![{topic}](https://img.shields.io/badge/{slug}-{count}-{color}?style=flat-square)"
+              )
+          topic_badges = '\n'.join(topic_badge_lines)
+
+          # ── 5. Replace between LEETSTATS markers ───────────────────────
+          def replace_block(text, start_tag, end_tag, new_body):
+              pattern = re.compile(
+                  re.escape(start_tag) + r'.*?' + re.escape(end_tag),
+                  re.DOTALL
+              )
+              replacement = f"{start_tag}\n{new_body}\n{end_tag}"
+              result = pattern.sub(replacement, text)
+              if result == text:
+                  print(f"WARNING: marker '{start_tag}' not found in README.")
+              return result
+
+          content = replace_block(
+              content,
+              "<!--LEETSTATS-BADGES-START-->",
+              "<!--LEETSTATS-BADGES-END-->",
+              header_badges
+          )
+          content = replace_block(
+              content,
+              "<!--LEETSTATS-TOPICS-START-->",
+              "<!--LEETSTATS-TOPICS-END-->",
+              topic_badges
+          )
+
+          with open('README.md', 'w', encoding='utf-8') as f:
+              f.write(content)
+
+          print("README.md updated successfully.")
+          PYEOF
+
+      - name: Commit updated stats
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add README.md
+          # Only commit if something actually changed
+          git diff --staged --quiet && echo "No changes to commit." && exit 0
+          git commit -m "chore: auto-update LeetCode stats [skip ci]"
+          git push
