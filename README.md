@@ -120,6 +120,7 @@ A curated collection of my LeetCode solutions, auto-synced using **LeetHub v2**.
 |  |
 | ------- |
 | [0002-add-two-numbers](https://github.com/Premnath-06/Leethub/tree/master/0002-add-two-numbers) |
+| [0010-regular-expression-matching](https://github.com/Premnath-06/Leethub/tree/master/0010-regular-expression-matching) |
 ## String
 |  |
 | ------- |
@@ -127,6 +128,7 @@ A curated collection of my LeetCode solutions, auto-synced using **LeetHub v2**.
 | [0005-longest-palindromic-substring](https://github.com/Premnath-06/Leethub/tree/master/0005-longest-palindromic-substring) |
 | [0006-zigzag-conversion](https://github.com/Premnath-06/Leethub/tree/master/0006-zigzag-conversion) |
 | [0008-string-to-integer-atoi](https://github.com/Premnath-06/Leethub/tree/master/0008-string-to-integer-atoi) |
+| [0010-regular-expression-matching](https://github.com/Premnath-06/Leethub/tree/master/0010-regular-expression-matching) |
 ## Sliding Window
 |  |
 | ------- |
@@ -148,6 +150,7 @@ A curated collection of my LeetCode solutions, auto-synced using **LeetHub v2**.
 |  |
 | ------- |
 | [0005-longest-palindromic-substring](https://github.com/Premnath-06/Leethub/tree/master/0005-longest-palindromic-substring) |
+| [0010-regular-expression-matching](https://github.com/Premnath-06/Leethub/tree/master/0010-regular-expression-matching) |
 <!---LeetCode Topics End-->
 
 <br/>
