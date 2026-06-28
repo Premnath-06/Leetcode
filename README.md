@@ -16,7 +16,7 @@
 
 <br/>
 
-[![LeetCode](https://img.shields.io/badge/LeetCode-Profile-FFA116?style=flat-square&logo=leetcode&logoColor=black)](https://leetcode.com/)
+[![LeetCode](https://img.shields.io/badge/LeetCode-Profile-FFA116?style=flat-square&logo=leetcode&logoColor=black)]([https://leetcode.com/](https://leetcode.com/u/Premnath_Rajule/))
 [![GitHub](https://img.shields.io/badge/GitHub-Premnath--06-181717?style=flat-square&logo=github&logoColor=white)](https://github.com/Premnath-06)
 ![Synced with](https://img.shields.io/badge/Synced%20with-LeetHub%20v2-6C63FF?style=flat-square)
 
