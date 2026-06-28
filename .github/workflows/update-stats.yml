@@ -99,7 +99,7 @@ jobs:
                       return data["data"]["question"]["difficulty"]
                   except Exception as e:
                       print(f"    Attempt {attempt+1} failed for '{title_slug}': {e}")
-                      time.sleep(2 ** attempt)  # exponential backoff
+                      time.sleep(2 ** attempt)
               return None
 
           difficulty_counts = {"Easy": 0, "Medium": 0, "Hard": 0}
@@ -112,20 +112,19 @@ jobs:
               if diff in difficulty_counts:
                   difficulty_counts[diff] += 1
                   api_success += 1
-                  print(f"  ✓ {title_slug}: {diff}")
+                  print(f"  v {title_slug}: {diff}")
               else:
-                  print(f"  ✗ {title_slug}: could not fetch")
+                  print(f"  x {title_slug}: could not fetch")
               time.sleep(0.5)
 
           easy   = difficulty_counts["Easy"]
           medium = difficulty_counts["Medium"]
           hard   = difficulty_counts["Hard"]
 
-          print(f"\nResults → Easy:{easy}  Medium:{medium}  Hard:{hard}  (fetched {api_success}/{total})")
+          print(f"\nResults -> Easy:{easy}  Medium:{medium}  Hard:{hard}  (fetched {api_success}/{total})")
 
           # ── 5. Build replacement blocks ─────────────────────────────────
 
-          # Header badges
           header_badges = (
               f"![Problems Solved](https://img.shields.io/badge/Problems%20Solved"
               f"-{total}-FFA116?style=for-the-badge&logo=leetcode&logoColor=black)\n"
@@ -135,7 +134,6 @@ jobs:
               f"-{num_topics}-7C3AED?style=for-the-badge)"
           )
 
-          # Progress table — only rewrite if API fetched at least half successfully
           progress_table = None
           if api_success >= total / 2:
               progress_table = (
@@ -153,7 +151,6 @@ jobs:
           else:
               print("Less than half of API calls succeeded — keeping existing progress table.")
 
-          # Topic badges (colour cycles every 3)
           COLORS = [
               '4F46E5','4F46E5','4F46E5',
               '7C3AED','7C3AED','7C3AED',
@@ -207,4 +204,13 @@ jobs:
           git add README.md
           git diff --staged --quiet && echo "No changes to commit." && exit 0
           git commit -m "chore: auto-update LeetCode stats [skip ci]"
-          git push
+
+          # Retry push up to 3 times to handle race with LeetHub pushing simultaneously
+          for i in 1 2 3; do
+            git pull --rebase origin main && git push && echo "Pushed on attempt $i." && exit 0
+            echo "Attempt $i failed, retrying in 5s..."
+            sleep 5
+          done
+
+          echo "All push attempts failed."
+          exit 1
