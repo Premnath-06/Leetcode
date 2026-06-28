@@ -20,10 +20,14 @@ jobs:
       - name: Checkout repo
         uses: actions/checkout@v4
 
+      - name: Install requests
+        run: pip install requests --break-system-packages --quiet
+
       - name: Parse README and update stats
         run: |
           python3 << 'PYEOF'
-          import re, sys
+          import re, sys, json, time
+          import requests
 
           with open('README.md', 'r', encoding='utf-8') as f:
               content = f.read()
@@ -41,13 +45,12 @@ jobs:
 
           block = content[idx_s : idx_e + len(LC_END)]
 
-          # ── 2. Count unique problems ────────────────────────────────────
-          # Problem slugs look like: [0001-two-sum](url)
-          slugs = re.findall(r'\[(\d{4}-[a-z0-9-]+)\]\(', block)
-          total = len(set(slugs))
+          # ── 2. Collect unique problem slugs ─────────────────────────────
+          raw_slugs = re.findall(r'\[(\d{4}-[a-z0-9-]+)\]\(', block)
+          unique_slugs = sorted(set(raw_slugs))
+          total = len(unique_slugs)
 
           # ── 3. Count per topic ──────────────────────────────────────────
-          # Topics are ## headings; each problem row matches | [slug](url) |
           topic_counts = {}
           current = None
           for line in block.splitlines():
@@ -59,66 +62,142 @@ jobs:
                   topic_counts[current] += 1
 
           num_topics = len(topic_counts)
-
           print(f"Unique problems : {total}")
           print(f"Unique topics   : {num_topics}")
-          for t, c in topic_counts.items():
-              print(f"  {t}: {c}")
 
-          # ── 4. Build new badge lines ────────────────────────────────────
+          # ── 4. Fetch difficulty via LeetCode GraphQL ────────────────────
+          GRAPHQL_URL = "https://leetcode.com/graphql/"
+          QUERY = """
+          query questionData($titleSlug: String!) {
+              question(titleSlug: $titleSlug) {
+                  difficulty
+              }
+          }
+          """
+          HEADERS = {
+              "Content-Type": "application/json",
+              "User-Agent": (
+                  "Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
+                  "AppleWebKit/537.36 (KHTML, like Gecko) "
+                  "Chrome/120.0.0.0 Safari/537.36"
+              ),
+              "Referer": "https://leetcode.com",
+              "Origin": "https://leetcode.com",
+          }
+
+          def fetch_difficulty(title_slug, retries=3):
+              for attempt in range(retries):
+                  try:
+                      resp = requests.post(
+                          GRAPHQL_URL,
+                          json={"query": QUERY, "variables": {"titleSlug": title_slug}},
+                          headers=HEADERS,
+                          timeout=20
+                      )
+                      resp.raise_for_status()
+                      data = resp.json()
+                      return data["data"]["question"]["difficulty"]
+                  except Exception as e:
+                      print(f"    Attempt {attempt+1} failed for '{title_slug}': {e}")
+                      time.sleep(2 ** attempt)  # exponential backoff
+              return None
+
+          difficulty_counts = {"Easy": 0, "Medium": 0, "Hard": 0}
+          api_success = 0
+
+          print(f"\nFetching difficulty for {total} problem(s)...")
+          for slug in unique_slugs:
+              title_slug = re.sub(r'^\d{4}-', '', slug)
+              diff = fetch_difficulty(title_slug)
+              if diff in difficulty_counts:
+                  difficulty_counts[diff] += 1
+                  api_success += 1
+                  print(f"  ✓ {title_slug}: {diff}")
+              else:
+                  print(f"  ✗ {title_slug}: could not fetch")
+              time.sleep(0.5)
+
+          easy   = difficulty_counts["Easy"]
+          medium = difficulty_counts["Medium"]
+          hard   = difficulty_counts["Hard"]
+
+          print(f"\nResults → Easy:{easy}  Medium:{medium}  Hard:{hard}  (fetched {api_success}/{total})")
+
+          # ── 5. Build replacement blocks ─────────────────────────────────
+
+          # Header badges
           header_badges = (
-              f"![Problems Solved](https://img.shields.io/badge/Problems%20Solved-{total}-FFA116"
-              f"?style=for-the-badge&logo=leetcode&logoColor=black)\n"
+              f"![Problems Solved](https://img.shields.io/badge/Problems%20Solved"
+              f"-{total}-FFA116?style=for-the-badge&logo=leetcode&logoColor=black)\n"
               f"![Language](https://img.shields.io/badge/Language-Python-3776AB"
               f"?style=for-the-badge&logo=python&logoColor=white)\n"
-              f"![Topics](https://img.shields.io/badge/Topics%20Covered-{num_topics}-7C3AED"
-              f"?style=for-the-badge)"
+              f"![Topics](https://img.shields.io/badge/Topics%20Covered"
+              f"-{num_topics}-7C3AED?style=for-the-badge)"
           )
 
-          # Colour cycling: first 3 topics get darkest purple, next 3 medium, rest lighter
-          COLORS = ['4F46E5', '4F46E5', '4F46E5',
-                    '7C3AED', '7C3AED', '7C3AED',
-                    '6C63FF', '6C63FF', '6C63FF',
-                    'A78BFA', 'A78BFA', 'A78BFA']
+          # Progress table — only rewrite if API fetched at least half successfully
+          progress_table = None
+          if api_success >= total / 2:
+              progress_table = (
+                  f"| Difficulty | Count | Badge |\n"
+                  f"|---|---|---|\n"
+                  f"| 🟩 Easy | {easy} | "
+                  f"![Easy](https://img.shields.io/badge/Easy-{easy}-2DB55D?style=flat-square) |\n"
+                  f"| 🟨 Medium | {medium} | "
+                  f"![Medium](https://img.shields.io/badge/Medium-{medium}-FFA116?style=flat-square) |\n"
+                  f"| 🟥 Hard | {hard} | "
+                  f"![Hard](https://img.shields.io/badge/Hard-{hard}-EF4743?style=flat-square) |\n"
+                  f"| **Total** | **{total}** | "
+                  f"![Total](https://img.shields.io/badge/Total-{total}-7C3AED?style=flat-square) |"
+              )
+          else:
+              print("Less than half of API calls succeeded — keeping existing progress table.")
 
-          topic_badge_lines = []
+          # Topic badges (colour cycles every 3)
+          COLORS = [
+              '4F46E5','4F46E5','4F46E5',
+              '7C3AED','7C3AED','7C3AED',
+              '6C63FF','6C63FF','6C63FF',
+              'A78BFA','A78BFA','A78BFA',
+          ]
+          topic_lines = []
           for i, (topic, count) in enumerate(topic_counts.items()):
               color = COLORS[min(i, len(COLORS) - 1)]
               slug  = topic.replace(' ', '%20').replace('&', '%26')
-              topic_badge_lines.append(
+              topic_lines.append(
                   f"![{topic}](https://img.shields.io/badge/{slug}-{count}-{color}?style=flat-square)"
               )
-          topic_badges = '\n'.join(topic_badge_lines)
+          topic_badges = '\n'.join(topic_lines)
 
-          # ── 5. Replace between LEETSTATS markers ───────────────────────
+          # ── 6. Replace between LEETSTATS markers ───────────────────────
           def replace_block(text, start_tag, end_tag, new_body):
               pattern = re.compile(
                   re.escape(start_tag) + r'.*?' + re.escape(end_tag),
                   re.DOTALL
               )
               replacement = f"{start_tag}\n{new_body}\n{end_tag}"
-              result = pattern.sub(replacement, text)
-              if result == text:
-                  print(f"WARNING: marker '{start_tag}' not found in README.")
-              return result
+              updated = pattern.sub(replacement, text)
+              if updated == text:
+                  print(f"WARNING: marker '{start_tag}' not found — skipping.")
+              return updated
 
-          content = replace_block(
-              content,
-              "<!--LEETSTATS-BADGES-START-->",
-              "<!--LEETSTATS-BADGES-END-->",
-              header_badges
-          )
-          content = replace_block(
-              content,
-              "<!--LEETSTATS-TOPICS-START-->",
-              "<!--LEETSTATS-TOPICS-END-->",
-              topic_badges
-          )
+          content = replace_block(content,
+              "<!--LEETSTATS-BADGES-START-->", "<!--LEETSTATS-BADGES-END-->",
+              header_badges)
+
+          content = replace_block(content,
+              "<!--LEETSTATS-TOPICS-START-->", "<!--LEETSTATS-TOPICS-END-->",
+              topic_badges)
+
+          if progress_table:
+              content = replace_block(content,
+                  "<!--LEETSTATS-PROGRESS-START-->", "<!--LEETSTATS-PROGRESS-END-->",
+                  progress_table)
 
           with open('README.md', 'w', encoding='utf-8') as f:
               f.write(content)
 
-          print("README.md updated successfully.")
+          print("\nREADME.md updated successfully.")
           PYEOF
 
       - name: Commit updated stats
@@ -126,7 +205,6 @@ jobs:
           git config user.name  "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add README.md
-          # Only commit if something actually changed
           git diff --staged --quiet && echo "No changes to commit." && exit 0
           git commit -m "chore: auto-update LeetCode stats [skip ci]"
           git push
