@@ -106,6 +106,7 @@ A curated collection of my LeetCode solutions, auto-synced using **LeetHub v2**.
 | [0004-median-of-two-sorted-arrays](https://github.com/Premnath-06/Leethub/tree/master/0004-median-of-two-sorted-arrays) |
 | [0011-container-with-most-water](https://github.com/Premnath-06/Leethub/tree/master/0011-container-with-most-water) |
 | [0014-longest-common-prefix](https://github.com/Premnath-06/Leethub/tree/master/0014-longest-common-prefix) |
+| [0015-3sum](https://github.com/Premnath-06/Leethub/tree/master/0015-3sum) |
 | [0033-search-in-rotated-sorted-array](https://github.com/Premnath-06/Leethub/tree/master/0033-search-in-rotated-sorted-array) |
 ## Hash Table
 |  |
@@ -160,6 +161,7 @@ A curated collection of my LeetCode solutions, auto-synced using **LeetHub v2**.
 | ------- |
 | [0005-longest-palindromic-substring](https://github.com/Premnath-06/Leethub/tree/master/0005-longest-palindromic-substring) |
 | [0011-container-with-most-water](https://github.com/Premnath-06/Leethub/tree/master/0011-container-with-most-water) |
+| [0015-3sum](https://github.com/Premnath-06/Leethub/tree/master/0015-3sum) |
 ## Dynamic Programming
 |  |
 | ------- |
@@ -173,6 +175,10 @@ A curated collection of my LeetCode solutions, auto-synced using **LeetHub v2**.
 |  |
 | ------- |
 | [0014-longest-common-prefix](https://github.com/Premnath-06/Leethub/tree/master/0014-longest-common-prefix) |
+## Sorting
+|  |
+| ------- |
+| [0015-3sum](https://github.com/Premnath-06/Leethub/tree/master/0015-3sum) |
 <!---LeetCode Topics End-->
 
 <br/>
