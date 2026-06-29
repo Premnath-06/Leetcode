@@ -9,9 +9,9 @@
 <br/><br/>
 
 <!--LEETSTATS-BADGES-START-->
-![Problems Solved](https://img.shields.io/badge/Problems%20Solved-18-FFA116?style=for-the-badge&logo=leetcode&logoColor=black)
+![Problems Solved](https://img.shields.io/badge/Problems%20Solved-19-FFA116?style=for-the-badge&logo=leetcode&logoColor=black)
 ![Language](https://img.shields.io/badge/Language-Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
-![Topics](https://img.shields.io/badge/Topics%20Covered-14-7C3AED?style=for-the-badge)
+![Topics](https://img.shields.io/badge/Topics%20Covered-15-7C3AED?style=for-the-badge)
 <!--LEETSTATS-BADGES-END-->
 
 <br/>
@@ -50,9 +50,9 @@ A curated collection of my LeetCode solutions, auto-synced using **LeetHub v2**.
 | Difficulty | Count | Badge |
 |---|---|---|
 | 🟩 Easy | 4 | ![Easy](https://img.shields.io/badge/Easy-4-2DB55D?style=flat-square) |
-| 🟨 Medium | 12 | ![Medium](https://img.shields.io/badge/Medium-12-FFA116?style=flat-square) |
+| 🟨 Medium | 13 | ![Medium](https://img.shields.io/badge/Medium-13-FFA116?style=flat-square) |
 | 🟥 Hard | 2 | ![Hard](https://img.shields.io/badge/Hard-2-EF4743?style=flat-square) |
-| **Total** | **18** | ![Total](https://img.shields.io/badge/Total-18-7C3AED?style=flat-square) |
+| **Total** | **19** | ![Total](https://img.shields.io/badge/Total-19-7C3AED?style=flat-square) |
 <!--LEETSTATS-PROGRESS-END-->
 
 </div>
@@ -71,11 +71,11 @@ A curated collection of my LeetCode solutions, auto-synced using **LeetHub v2**.
 
 <!--LEETSTATS-TOPICS-START-->
 ![Array](https://img.shields.io/badge/Array-8-4F46E5?style=flat-square)
-![Hash Table](https://img.shields.io/badge/Hash%20Table-4-4F46E5?style=flat-square)
+![Hash Table](https://img.shields.io/badge/Hash%20Table-5-4F46E5?style=flat-square)
 ![Linked List](https://img.shields.io/badge/Linked%20List-1-4F46E5?style=flat-square)
 ![Math](https://img.shields.io/badge/Math-5-7C3AED?style=flat-square)
 ![Recursion](https://img.shields.io/badge/Recursion-2-7C3AED?style=flat-square)
-![String](https://img.shields.io/badge/String-8-7C3AED?style=flat-square)
+![String](https://img.shields.io/badge/String-9-7C3AED?style=flat-square)
 ![Sliding Window](https://img.shields.io/badge/Sliding%20Window-1-6C63FF?style=flat-square)
 ![Binary Search](https://img.shields.io/badge/Binary%20Search-2-6C63FF?style=flat-square)
 ![Divide and Conquer](https://img.shields.io/badge/Divide%20and%20Conquer-1-6C63FF?style=flat-square)
@@ -84,6 +84,7 @@ A curated collection of my LeetCode solutions, auto-synced using **LeetHub v2**.
 ![Greedy](https://img.shields.io/badge/Greedy-1-A78BFA?style=flat-square)
 ![Trie](https://img.shields.io/badge/Trie-1-A78BFA?style=flat-square)
 ![Sorting](https://img.shields.io/badge/Sorting-3-A78BFA?style=flat-square)
+![Backtracking](https://img.shields.io/badge/Backtracking-1-A78BFA?style=flat-square)
 <!--LEETSTATS-TOPICS-END-->
 
 </div>
