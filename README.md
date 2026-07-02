@@ -9,7 +9,7 @@
 <br/><br/>
 
 <!--LEETSTATS-BADGES-START-->
-![Problems Solved](https://img.shields.io/badge/Problems%20Solved-25-FFA116?style=for-the-badge&logo=leetcode&logoColor=black)
+![Problems Solved](https://img.shields.io/badge/Problems%20Solved-26-FFA116?style=for-the-badge&logo=leetcode&logoColor=black)
 ![Language](https://img.shields.io/badge/Language-Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
 ![Topics](https://img.shields.io/badge/Topics%20Covered-18-7C3AED?style=for-the-badge)
 <!--LEETSTATS-BADGES-END-->
@@ -51,8 +51,8 @@ A curated collection of my LeetCode solutions, auto-synced using **LeetHub v2**.
 |---|---|---|
 | 🟩 Easy | 6 | ![Easy](https://img.shields.io/badge/Easy-6-2DB55D?style=flat-square) |
 | 🟨 Medium | 16 | ![Medium](https://img.shields.io/badge/Medium-16-FFA116?style=flat-square) |
-| 🟥 Hard | 3 | ![Hard](https://img.shields.io/badge/Hard-3-EF4743?style=flat-square) |
-| **Total** | **25** | ![Total](https://img.shields.io/badge/Total-25-7C3AED?style=flat-square) |
+| 🟥 Hard | 4 | ![Hard](https://img.shields.io/badge/Hard-4-EF4743?style=flat-square) |
+| **Total** | **26** | ![Total](https://img.shields.io/badge/Total-26-7C3AED?style=flat-square) |
 <!--LEETSTATS-PROGRESS-END-->
 
 </div>
@@ -72,9 +72,9 @@ A curated collection of my LeetCode solutions, auto-synced using **LeetHub v2**.
 <!--LEETSTATS-TOPICS-START-->
 ![Array](https://img.shields.io/badge/Array-8-4F46E5?style=flat-square)
 ![Hash Table](https://img.shields.io/badge/Hash%20Table-5-4F46E5?style=flat-square)
-![Linked List](https://img.shields.io/badge/Linked%20List-5-4F46E5?style=flat-square)
+![Linked List](https://img.shields.io/badge/Linked%20List-6-4F46E5?style=flat-square)
 ![Math](https://img.shields.io/badge/Math-5-7C3AED?style=flat-square)
-![Recursion](https://img.shields.io/badge/Recursion-4-7C3AED?style=flat-square)
+![Recursion](https://img.shields.io/badge/Recursion-5-7C3AED?style=flat-square)
 ![String](https://img.shields.io/badge/String-11-7C3AED?style=flat-square)
 ![Sliding Window](https://img.shields.io/badge/Sliding%20Window-1-6C63FF?style=flat-square)
 ![Binary Search](https://img.shields.io/badge/Binary%20Search-2-6C63FF?style=flat-square)
