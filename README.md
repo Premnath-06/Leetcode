@@ -131,6 +131,7 @@ A curated collection of my LeetCode solutions, auto-synced using **LeetHub v2**.
 | [0021-merge-two-sorted-lists](https://github.com/Premnath-06/Leethub/tree/master/0021-merge-two-sorted-lists) |
 | [0023-merge-k-sorted-lists](https://github.com/Premnath-06/Leethub/tree/master/0023-merge-k-sorted-lists) |
 | [0024-swap-nodes-in-pairs](https://github.com/Premnath-06/Leethub/tree/master/0024-swap-nodes-in-pairs) |
+| [0025-reverse-nodes-in-k-group](https://github.com/Premnath-06/Leethub/tree/master/0025-reverse-nodes-in-k-group) |
 ## Math
 |  |
 | ------- |
@@ -146,6 +147,7 @@ A curated collection of my LeetCode solutions, auto-synced using **LeetHub v2**.
 | [0010-regular-expression-matching](https://github.com/Premnath-06/Leethub/tree/master/0010-regular-expression-matching) |
 | [0021-merge-two-sorted-lists](https://github.com/Premnath-06/Leethub/tree/master/0021-merge-two-sorted-lists) |
 | [0024-swap-nodes-in-pairs](https://github.com/Premnath-06/Leethub/tree/master/0024-swap-nodes-in-pairs) |
+| [0025-reverse-nodes-in-k-group](https://github.com/Premnath-06/Leethub/tree/master/0025-reverse-nodes-in-k-group) |
 ## String
 |  |
 | ------- |
