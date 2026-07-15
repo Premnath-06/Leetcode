@@ -122,6 +122,7 @@ A curated collection of my LeetCode solutions, auto-synced using **LeetHub v2**.
 | [0033-search-in-rotated-sorted-array](https://github.com/Premnath-06/Leethub/tree/master/0033-search-in-rotated-sorted-array) |
 | [0034-find-first-and-last-position-of-element-in-sorted-array](https://github.com/Premnath-06/Leethub/tree/master/0034-find-first-and-last-position-of-element-in-sorted-array) |
 | [0035-search-insert-position](https://github.com/Premnath-06/Leethub/tree/master/0035-search-insert-position) |
+| [0036-valid-sudoku](https://github.com/Premnath-06/Leethub/tree/master/0036-valid-sudoku) |
 ## Hash Table
 |  |
 | ------- |
@@ -130,6 +131,7 @@ A curated collection of my LeetCode solutions, auto-synced using **LeetHub v2**.
 | [0012-integer-to-roman](https://github.com/Premnath-06/Leethub/tree/master/0012-integer-to-roman) |
 | [0013-roman-to-integer](https://github.com/Premnath-06/Leethub/tree/master/0013-roman-to-integer) |
 | [0017-letter-combinations-of-a-phone-number](https://github.com/Premnath-06/Leethub/tree/master/0017-letter-combinations-of-a-phone-number) |
+| [0036-valid-sudoku](https://github.com/Premnath-06/Leethub/tree/master/0036-valid-sudoku) |
 ## Linked List
 |  |
 | ------- |
@@ -248,6 +250,10 @@ A curated collection of my LeetCode solutions, auto-synced using **LeetHub v2**.
 |  |
 | ------- |
 | [0029-divide-two-integers](https://github.com/Premnath-06/Leethub/tree/master/0029-divide-two-integers) |
+## Matrix
+|  |
+| ------- |
+| [0036-valid-sudoku](https://github.com/Premnath-06/Leethub/tree/master/0036-valid-sudoku) |
 <!---LeetCode Topics End-->
 
 <br/>
