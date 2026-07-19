@@ -9,7 +9,7 @@
 <br/><br/>
 
 <!--LEETSTATS-BADGES-START-->
-![Problems Solved](https://img.shields.io/badge/Problems%20Solved-36-FFA116?style=for-the-badge&logo=leetcode&logoColor=black)
+![Problems Solved](https://img.shields.io/badge/Problems%20Solved-37-FFA116?style=for-the-badge&logo=leetcode&logoColor=black)
 ![Language](https://img.shields.io/badge/Language-Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
 ![Topics](https://img.shields.io/badge/Topics%20Covered-21-7C3AED?style=for-the-badge)
 <!--LEETSTATS-BADGES-END-->
@@ -50,9 +50,9 @@ A curated collection of my LeetCode solutions, auto-synced using **LeetHub v2**.
 | Difficulty | Count | Badge |
 |---|---|---|
 | 🟩 Easy | 10 | ![Easy](https://img.shields.io/badge/Easy-10-2DB55D?style=flat-square) |
-| 🟨 Medium | 20 | ![Medium](https://img.shields.io/badge/Medium-20-FFA116?style=flat-square) |
+| 🟨 Medium | 21 | ![Medium](https://img.shields.io/badge/Medium-21-FFA116?style=flat-square) |
 | 🟥 Hard | 6 | ![Hard](https://img.shields.io/badge/Hard-6-EF4743?style=flat-square) |
-| **Total** | **36** | ![Total](https://img.shields.io/badge/Total-36-7C3AED?style=flat-square) |
+| **Total** | **37** | ![Total](https://img.shields.io/badge/Total-37-7C3AED?style=flat-square) |
 <!--LEETSTATS-PROGRESS-END-->
 
 </div>
@@ -75,7 +75,7 @@ A curated collection of my LeetCode solutions, auto-synced using **LeetHub v2**.
 ![Linked List](https://img.shields.io/badge/Linked%20List-6-4F46E5?style=flat-square)
 ![Math](https://img.shields.io/badge/Math-6-7C3AED?style=flat-square)
 ![Recursion](https://img.shields.io/badge/Recursion-5-7C3AED?style=flat-square)
-![String](https://img.shields.io/badge/String-13-7C3AED?style=flat-square)
+![String](https://img.shields.io/badge/String-14-7C3AED?style=flat-square)
 ![Sliding Window](https://img.shields.io/badge/Sliding%20Window-1-6C63FF?style=flat-square)
 ![Binary Search](https://img.shields.io/badge/Binary%20Search-4-6C63FF?style=flat-square)
 ![Divide and Conquer](https://img.shields.io/badge/Divide%20and%20Conquer-2-6C63FF?style=flat-square)
