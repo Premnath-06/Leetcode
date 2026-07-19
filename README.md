@@ -177,6 +177,7 @@ A curated collection of my LeetCode solutions, auto-synced using **LeetHub v2**.
 | [0022-generate-parentheses](https://github.com/Premnath-06/Leethub/tree/master/0022-generate-parentheses) |
 | [0028-find-the-index-of-the-first-occurrence-in-a-string](https://github.com/Premnath-06/Leethub/tree/master/0028-find-the-index-of-the-first-occurrence-in-a-string) |
 | [0032-longest-valid-parentheses](https://github.com/Premnath-06/Leethub/tree/master/0032-longest-valid-parentheses) |
+| [0038-count-and-say](https://github.com/Premnath-06/Leethub/tree/master/0038-count-and-say) |
 ## Sliding Window
 |  |
 | ------- |
