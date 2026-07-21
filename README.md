@@ -9,7 +9,7 @@
 <br/><br/>
 
 <!--LEETSTATS-BADGES-START-->
-![Problems Solved](https://img.shields.io/badge/Problems%20Solved-38-FFA116?style=for-the-badge&logo=leetcode&logoColor=black)
+![Problems Solved](https://img.shields.io/badge/Problems%20Solved-39-FFA116?style=for-the-badge&logo=leetcode&logoColor=black)
 ![Language](https://img.shields.io/badge/Language-Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
 ![Topics](https://img.shields.io/badge/Topics%20Covered-21-7C3AED?style=for-the-badge)
 <!--LEETSTATS-BADGES-END-->
@@ -50,9 +50,9 @@ A curated collection of my LeetCode solutions, auto-synced using **LeetHub v2**.
 | Difficulty | Count | Badge |
 |---|---|---|
 | 🟩 Easy | 10 | ![Easy](https://img.shields.io/badge/Easy-10-2DB55D?style=flat-square) |
-| 🟨 Medium | 22 | ![Medium](https://img.shields.io/badge/Medium-22-FFA116?style=flat-square) |
+| 🟨 Medium | 23 | ![Medium](https://img.shields.io/badge/Medium-23-FFA116?style=flat-square) |
 | 🟥 Hard | 6 | ![Hard](https://img.shields.io/badge/Hard-6-EF4743?style=flat-square) |
-| **Total** | **38** | ![Total](https://img.shields.io/badge/Total-38-7C3AED?style=flat-square) |
+| **Total** | **39** | ![Total](https://img.shields.io/badge/Total-39-7C3AED?style=flat-square) |
 <!--LEETSTATS-PROGRESS-END-->
 
 </div>
@@ -70,7 +70,7 @@ A curated collection of my LeetCode solutions, auto-synced using **LeetHub v2**.
 <div align="center">
 
 <!--LEETSTATS-TOPICS-START-->
-![Array](https://img.shields.io/badge/Array-16-4F46E5?style=flat-square)
+![Array](https://img.shields.io/badge/Array-17-4F46E5?style=flat-square)
 ![Hash Table](https://img.shields.io/badge/Hash%20Table-7-4F46E5?style=flat-square)
 ![Linked List](https://img.shields.io/badge/Linked%20List-6-4F46E5?style=flat-square)
 ![Math](https://img.shields.io/badge/Math-6-7C3AED?style=flat-square)
@@ -84,7 +84,7 @@ A curated collection of my LeetCode solutions, auto-synced using **LeetHub v2**.
 ![Greedy](https://img.shields.io/badge/Greedy-1-A78BFA?style=flat-square)
 ![Trie](https://img.shields.io/badge/Trie-1-A78BFA?style=flat-square)
 ![Sorting](https://img.shields.io/badge/Sorting-3-A78BFA?style=flat-square)
-![Backtracking](https://img.shields.io/badge/Backtracking-4-A78BFA?style=flat-square)
+![Backtracking](https://img.shields.io/badge/Backtracking-5-A78BFA?style=flat-square)
 ![Stack](https://img.shields.io/badge/Stack-2-A78BFA?style=flat-square)
 ![Heap (Priority Queue)](https://img.shields.io/badge/Heap%20(Priority%20Queue)-1-A78BFA?style=flat-square)
 ![Merge Sort](https://img.shields.io/badge/Merge%20Sort-1-A78BFA?style=flat-square)
