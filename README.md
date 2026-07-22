@@ -9,7 +9,7 @@
 <br/><br/>
 
 <!--LEETSTATS-BADGES-START-->
-![Problems Solved](https://img.shields.io/badge/Problems%20Solved-39-FFA116?style=for-the-badge&logo=leetcode&logoColor=black)
+![Problems Solved](https://img.shields.io/badge/Problems%20Solved-40-FFA116?style=for-the-badge&logo=leetcode&logoColor=black)
 ![Language](https://img.shields.io/badge/Language-Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
 ![Topics](https://img.shields.io/badge/Topics%20Covered-21-7C3AED?style=for-the-badge)
 <!--LEETSTATS-BADGES-END-->
@@ -51,8 +51,8 @@ A curated collection of my LeetCode solutions, auto-synced using **LeetHub v2**.
 |---|---|---|
 | 🟩 Easy | 10 | ![Easy](https://img.shields.io/badge/Easy-10-2DB55D?style=flat-square) |
 | 🟨 Medium | 23 | ![Medium](https://img.shields.io/badge/Medium-23-FFA116?style=flat-square) |
-| 🟥 Hard | 6 | ![Hard](https://img.shields.io/badge/Hard-6-EF4743?style=flat-square) |
-| **Total** | **39** | ![Total](https://img.shields.io/badge/Total-39-7C3AED?style=flat-square) |
+| 🟥 Hard | 7 | ![Hard](https://img.shields.io/badge/Hard-7-EF4743?style=flat-square) |
+| **Total** | **40** | ![Total](https://img.shields.io/badge/Total-40-7C3AED?style=flat-square) |
 <!--LEETSTATS-PROGRESS-END-->
 
 </div>
@@ -70,8 +70,8 @@ A curated collection of my LeetCode solutions, auto-synced using **LeetHub v2**.
 <div align="center">
 
 <!--LEETSTATS-TOPICS-START-->
-![Array](https://img.shields.io/badge/Array-17-4F46E5?style=flat-square)
-![Hash Table](https://img.shields.io/badge/Hash%20Table-7-4F46E5?style=flat-square)
+![Array](https://img.shields.io/badge/Array-18-4F46E5?style=flat-square)
+![Hash Table](https://img.shields.io/badge/Hash%20Table-8-4F46E5?style=flat-square)
 ![Linked List](https://img.shields.io/badge/Linked%20List-6-4F46E5?style=flat-square)
 ![Math](https://img.shields.io/badge/Math-6-7C3AED?style=flat-square)
 ![Recursion](https://img.shields.io/badge/Recursion-5-7C3AED?style=flat-square)
